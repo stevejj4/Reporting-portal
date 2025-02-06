@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# 🚀 BigQuery-Based Reporting Assistant
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Project Overview
+This project is a **scalable, AI-powered reporting assistant** that integrates with **BigQuery** for real-time analytics. It allows users to generate reports, ask AI-driven questions, and visualize insights dynamically.
 
-## Available Scripts
+## 🏗️ Architecture
+### **1️⃣ Data Pipeline (ETL) - Apache Airflow / dbt / PySpark**
+- Extracts data from **Google Sheets, APIs**.
+- Transforms and loads data into **BigQuery**.
 
-In the project directory, you can run:
+### **2️⃣ Backend API (FastAPI)**
+- Handles **authentication (OAuth - Google, Firebase, Microsoft)**.
+- Provides endpoints for querying **BigQuery reports**.
+- Integrates **AI chatbot (LLM)** for auto-generated insights.
 
-### `npm start`
+### **3️⃣ Frontend Dashboard (React)**
+- Displays **interactive reports and charts**.
+- Allows users to **ask AI questions** about data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Technologies Used
+| Component | Technologies |
+|-----------|-------------|
+| **Frontend** | React, Tailwind CSS |
+| **Backend API** | FastAPI, Python, OAuth2, BigQuery SDK |
+| **Database** | Google BigQuery |
+| **ETL Pipeline** | Apache Airflow, dbt, PySpark |
+| **AI Integration** | OpenAI / Vertex AI for chatbot insights |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🔧 Setup Guide
+### **1️⃣ Clone Repository**
+```bash
+git clone https://github.com/yourusername/reporting-assistant.git
+cd reporting-assistant
+```
 
-### `npm test`
+### **2️⃣ Backend Setup**
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### **3️⃣ Frontend Setup**
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-### `npm run build`
+### **4️⃣ Deploying to Google Cloud**
+- **BigQuery:** Set up a dataset and load initial data.
+- **Cloud Run / GKE:** Deploy backend API.
+- **Vercel / Firebase Hosting:** Deploy frontend dashboard.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📊 Usage
+1️⃣ Upload data via **Google Sheets or API**.  
+2️⃣ Run **ETL pipeline (Airflow/dbt)** to update BigQuery.  
+3️⃣ Use the **frontend dashboard** to visualize reports.  
+4️⃣ Ask the **AI chatbot** for automated insights.  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📜 License
+MIT License - Open for contributions!
